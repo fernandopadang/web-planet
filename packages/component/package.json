@@ -1,0 +1,17 @@
+{
+  "name": "@web-planet/component",
+  "version": "0.1.0",
+  "private": true,
+  "main": "index.js",
+  "peerDependencies": {
+    "react": "17.0.1",
+    "react-dom": "17.0.1",
+    "typescript": "^4.1.5"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@types/styled-components": "^5.1.7",
+    "babel-plugin-styled-components": "^1.12.0",
+    "styled-components": "^5.2.1"
+  }
+}
