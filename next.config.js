@@ -2,13 +2,11 @@ const withPlugins = require('next-compose-plugins');
 const withImages = require('next-images');
 
 const defaultConfiguration = {
-  publicRuntimeConfig: {
-    // apiUrl: process.env.API_URL,
-  }
+  publicRuntimeConfig: {}
 };
 
 const config = withPlugins([
-   withImages
+  withImages
 ], defaultConfiguration);
 
 module.exports = config;
