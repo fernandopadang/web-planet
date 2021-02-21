@@ -1,7 +1,7 @@
 import MVButton from '../button';
 import { Navbar, Logo, SectionRight, Separator } from './style';
 import MVAutoComplete from '../autocomplete';
-import { PlanetListModel, PlanetSearchModel } from '@web-planet/model';
+import { PlanetListModel } from '@web-planet/model';
 import { Planet } from '@web-planet/repositories';
 import debounce from 'lodash/debounce';
 import { useCallback, useState } from 'react';
@@ -21,7 +21,7 @@ const DefaultNavbar = () => {
   const getPlanet = debounce(async (value?: string, isSearchPlanet?: boolean) => {
     setIsLoading(true);
     try {
-      const response: PlanetListModel = await Planet.getPlanet({s: value, page: 1});
+      const response: PlanetListModel = await Planet.getPlanet({search: value});
       if (response.count === dataSet.length) {
         setIsLoading(false);
         return setDataSet([]);
