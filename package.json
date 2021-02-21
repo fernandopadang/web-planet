@@ -12,15 +12,23 @@
     "watch": "next"
   },
   "dependencies": {
-    "@web-planet/layout": "^0",
-    "@web-planet/component": "^0",
+    "@types/react-redux": "^7.1.16",
+    "@web-planet/components": "^0",
+    "@web-planet/helpers": "^0",
+    "@web-planet/layouts": "^0",
+    "@web-planet/models": "^0",
+    "@web-planet/repositories": "^0",
+    "@web-planet/stores": "^0",
+    "@web-planet/views": "^0",
     "next": "10.0.7",
     "next-compose-plugins": "^2.2.1",
     "next-images": "^1.7.0",
     "react": "17.0.1",
-    "react-dom": "17.0.1"
+    "react-dom": "17.0.1",
+    "react-redux": "^7.2.2"
   },
   "devDependencies": {
+    "@types/lodash.debounce": "^4.0.6",
     "@types/node": "^14.14.30",
     "@types/react": "^17.0.2",
     "typescript": "^4.1.5"
