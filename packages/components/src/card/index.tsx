@@ -23,18 +23,20 @@ export default memo((props: DefaultProps) => {
           <Description>
             <h2>{name}</h2>
             <table>
-              <tr>
-                <th>Diameter</th>
-                <td><h4>{Number.numberWithCommas(diameter || 0)}</h4></td>
-              </tr>
-              <tr>
-                <th>Orbital Period</th>
-                <td><h4>{orbitalPeriod}</h4></td>
-              </tr>
-              <tr>
-                <th>Rotation Period</th>
-                <td><h4>{rotationPeriod}</h4></td>
-              </tr>
+              <tbody>
+                <tr>
+                  <th>Diameter</th>
+                  <td><h4>{Number.numberWithCommas(diameter || 0)}</h4></td>
+                </tr>
+                <tr>
+                  <th>Orbital Period</th>
+                  <td><h4>{orbitalPeriod}</h4></td>
+                </tr>
+                <tr>
+                  <th>Rotation Period</th>
+                  <td><h4>{rotationPeriod}</h4></td>
+                </tr>
+              </tbody>
             </table>
           </Description>
         </a>
