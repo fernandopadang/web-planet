@@ -11,7 +11,7 @@ export default {
   },
   getPlanetDetail (payload: {id: any}) {
     return API ({
-      url: `https://swapi.dev/api/planets/${payload.id}`,
+      url: `https://swapi.dev/api/planets/${payload.id}/`,
       method: "get",
       fullUrl: true
     });
