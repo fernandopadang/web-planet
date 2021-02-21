@@ -1,10 +1,10 @@
 import { LayoutMaster } from '@web-planet/layout';
-import Components from '@web-planet/component';
+import { PlanetListView } from '@web-planet/views';
 
 const MyApp = (props: any) => {
 
   const PropsLayout = {
-    children: <Components />
+    children: <PlanetListView />
   };
 
   return <LayoutMaster {...PropsLayout} />;
