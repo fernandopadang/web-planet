@@ -1,4 +1,4 @@
-import { LayoutMaster } from '@web-planet/layout';
+import { LayoutMaster } from '@web-planet/layouts';
 import { PlanetListView } from '@web-planet/views';
 
 const MyApp = (props: any) => {
