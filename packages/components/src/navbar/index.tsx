@@ -1,7 +1,7 @@
 import MVButton from '../button';
 import { Navbar, Logo, SectionRight, Separator } from './style';
 import MVAutoComplete from '../autocomplete';
-import { PlanetListModel } from '@web-planet/model';
+import { PlanetListModel } from '@web-planet/models';
 import { Planet } from '@web-planet/repositories';
 import debounce from 'lodash/debounce';
 import { useCallback, useState } from 'react';
