@@ -1,11 +1,12 @@
 import { Container, Row, Col } from 'react-grid-system';
-import { PNCard, PNLoader } from '@web-planet/component';
+import { PNCard, PNLoader } from '@web-planet/components';
 import { Planet } from '@web-planet/repositories';
-import { PlanetListModel, PlanetModel } from '@web-planet/model';
-import { useEffect, useState } from 'react';
+import { PlanetListModel, PlanetModel } from '@web-planet/models';
+import { useEffect, useState, Fragment } from 'react';
 import { Section } from './style';
 import HyperModal from 'react-hyper-modal';
 import { useDispatch, useStore } from 'react-redux';
+import Head from 'next/head';
 
 const PlanetList = () => {
 
@@ -74,36 +75,41 @@ const PlanetList = () => {
   });
 
   return (
-    <Section>
-      <Container fluid={true}>
-        <Row>
-          {planetList.map((planet, key) => {
-            let id: string[] | string = planet.url.split("/");
-            id = id[id.length - 2];
-            return (
-              <Col xs={12} sm={6} md={4} lg={4} xl={3} style={{paddingTop: '8px', paddingBottom: '8px'}} key={key}>
-                <PNCard
-                  id={id}
-                  image="https://images.unsplash.com/photo-1451187580459-43490279c0fa?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MXwxMjA3fDB8MXxzZWFyY2h8Mnx8cGxhbmV0fHwwfHx8&ixlib=rb-1.2.1&q=80&w=1080"
-                  name={planet.name}
-                  rotationPeriod={planet.rotation_period}
-                  orbitalPeriod={planet.orbital_period}
-                  diameter={planet.diameter}
-                  onImageClick={() => setModalImage("https://images.unsplash.com/photo-1451187580459-43490279c0fa?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MXwxMjA3fDB8MXxzZWFyY2h8Mnx8cGxhbmV0fHwwfHx8&ixlib=rb-1.2.1&q=80&w=1080")} />
-              </Col>
-            )
-          })}
-        </Row>
-        {loading && <PNLoader />}
-      </Container>
-      <HyperModal
-        isOpen={!!modalImage}
-        isFullscreen={true}
-        requestClose={() => setModalImage(undefined)}
-      >
-        <img src={modalImage || ""} alt={modalImage} width="100%" height="100%" />
-      </HyperModal>
-    </Section>
+    <Fragment>
+      <Head>
+        <title>Web Planet</title>
+      </Head>
+      <Section>
+        <Container fluid={true}>
+          <Row>
+            {planetList.map((planet, key) => {
+              let id: string[] | string = planet.url.split("/");
+              id = id[id.length - 2];
+              return (
+                <Col xs={12} sm={6} md={4} lg={4} xl={3} style={{paddingTop: '8px', paddingBottom: '8px'}} key={key}>
+                  <PNCard
+                    id={id}
+                    image="https://images.unsplash.com/photo-1451187580459-43490279c0fa?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MXwxMjA3fDB8MXxzZWFyY2h8Mnx8cGxhbmV0fHwwfHx8&ixlib=rb-1.2.1&q=80&w=1080"
+                    name={planet.name}
+                    rotationPeriod={planet.rotation_period}
+                    orbitalPeriod={planet.orbital_period}
+                    diameter={planet.diameter}
+                    onImageClick={() => setModalImage("https://images.unsplash.com/photo-1451187580459-43490279c0fa?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MXwxMjA3fDB8MXxzZWFyY2h8Mnx8cGxhbmV0fHwwfHx8&ixlib=rb-1.2.1&q=80&w=1080")} />
+                </Col>
+              )
+            })}
+          </Row>
+          {loading && <PNLoader />}
+        </Container>
+        <HyperModal
+          isOpen={!!modalImage}
+          isFullscreen={true}
+          requestClose={() => setModalImage(undefined)}
+        >
+          <img src={modalImage || ""} alt={modalImage} width="100%" height="100%" />
+        </HyperModal>
+      </Section>
+    </Fragment>
   )
 }
 
